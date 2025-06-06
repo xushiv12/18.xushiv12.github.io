@@ -1,0 +1,21 @@
+
+
+<h1>xushi chrome 徐房域名预览浏览器</h1>
+请输入您的域名:<input id="a">
+<button onclick="A()">预览</button><br>
+<iframe width="300px" height="300px" id="b"></iframe>
+<script>
+function A(){
+	let a=document.getElementById("a").value;
+	fetch("https://domain.xushi-1009.cc/1",{
+		method:"POST",
+		headers:{
+			"content-type":"application/x-www-form-urlencoded"
+		},
+		body:`asd=${a}`
+	})
+	.then(b=>b.text())
+	.then(c=>document.getElementById("b").srcdoc=c)
+	.catch(d=>alert("发生错误:"+d));
+}
+</script>
