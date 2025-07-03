@@ -8,7 +8,7 @@ class XU{
 		alert(a);
 	}
 };
-!function(){
+!function(e,t){
 	document.querySelectorAll('script[x="xu.js"]').forEach(code=>{
 		let a=code.textContent;
 		switch(true){
