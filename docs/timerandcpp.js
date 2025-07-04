@@ -30,7 +30,7 @@ function cpp解释器(pid){
 		    body:`x1=${a}`
 	    })
 	    .then(b=>b.text())
-	    .then(c=>document.getElementById(pid).innerHTML=c)
+	    .then(c=>document.getElementById(pid).innerHTML="<b>这是输出(注意不会换行,即使你输入了\\n):</b><br>"+c)
 	    .catch(d=>alert("发生错误:"+d));
 	});
 }
