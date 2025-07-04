@@ -107,3 +107,19 @@ function cpp解释器(pid){
 	    .catch(d=>alert("发生错误:"+d));
 	});
 }
+function 语言解释器(lang,id){
+	document.querySelectorAll(lang).forEach(e=>{
+		e.style="display:none";
+		let a=e.textContent;
+	    fetch("https://xuxu.xushi-1009.cc/"+lang,{
+		    method:"POST",
+		    headers:{
+			    "content-type":"application/x-www-form-urlencoded"
+		    },
+		    body:`x1=${a}`
+	    })
+	    .then(b=>b.text())
+	    .then(c=>document.getElementById(id).innerHTML="<b>这是运行结果(不能换行，即使你输入了\\n):</b><br>"+c)
+	    .catch(d=>alert("发生错误:"+d));
+	});
+}
