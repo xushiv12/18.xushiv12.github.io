@@ -103,7 +103,7 @@ function cpp解释器(pid){
 		    body:`x1=${a}`
 	    })
 	    .then(b=>b.text())
-	    .then(c=>document.getElementById(pid).innerHTML==c.replace(/\n/g,"<br>"))
+	    .then(c=>document.getElementById(pid).innerHTML="<b>这是运行结果(不能换行，即使你输入了\\n):</b><br>"+c)
 	    .catch(d=>alert("发生错误:"+d));
 	});
 }
