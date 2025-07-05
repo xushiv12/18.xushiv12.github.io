@@ -123,3 +123,32 @@ function 语言解释器(lang,id){
 	    .catch(d=>alert("发生错误:"+d));
 	});
 }
+function xushi(){
+	document.querySelectorAll("xushi").forEach(e=>{
+		e.style.display="none";
+		let a=e.textContent.trim();
+		if(a.startsWith("<@")&&a.endsWith("\/>")){
+		   let b=a.match(/<@(.*?)\/>/);
+		   if(b===null){
+			   alert("null");
+		   }else{
+			   let b1=document.createElement("p");
+		       b1.innerHTML=b[1];
+		       b1.style.color="purple";
+		       document.body.appendChild(b1);
+		   }
+		}else if(a.includes(":")){
+			let c=a.split(":")[0];
+			let c1=a.split(":")[1];
+			let c2=document.createElement(c);
+		    c2.innerHTML=c1;
+		    c2.style.color="lime";
+		    document.body.appendChild(c2);
+		}else{
+			let d2=document.createElement("p");
+		    d2.innerHTML="xushi语言里没有这个语句";
+		    d2.style.color="red";
+		    document.body.appendChild(d2);
+		}
+	});
+}
