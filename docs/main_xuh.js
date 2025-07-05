@@ -152,3 +152,24 @@ function xushi(){
 		}
 	});
 }
+let xxx,xxx1;
+function xu_Css(){
+	document.querySelectorAll('style[s="function"]').forEach(e=>{
+		let a=e.textContent.trim();
+		if(a.includes(":")&&a.endsWith(";")){
+			xxx=a.match(/:(.*?);/);
+			xxx1=a.match(/cf[\u0020](.*?):/);
+		}else{
+			alert("不合法语句");
+		}
+	});
+	document.querySelectorAll('style[s="use"]').forEach(e=>{
+		let a=e.textContent.trim();
+		let a1=e.textContent.trim();
+		let a2=xxx1[1]+"()";
+		if(a1.includes(a2)){
+			let a3=a.replaceAll(a2,xxx[1]);
+			e.textContent=a3;
+		}
+	});
+}
