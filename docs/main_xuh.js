@@ -173,3 +173,15 @@ function xu_Css(){
 		}
 	});
 }
+function hx(xxx){
+	let c="未找到";
+	document.querySelectorAll('hx').forEach(e=>{
+		let a=e.textContent.trim();
+		e.style.display="none";
+		if(a.includes(xxx)){
+			let b=new RegExp(`${xxx}=(.*?);`);
+			c=a.match(b)[1];
+		}
+	});
+	return c;
+}
